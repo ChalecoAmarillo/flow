@@ -29,6 +29,13 @@ function getParameterByName(name) {
 	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+function handlePlayerError(errorEvent) {
+    console.error('Error en JWPlayer:', errorEvent);
+    
+    // Recarga la página inmediatamente
+    location.reload();
+}
+
 var getURL = getParameterByName('get');
 if (getURL == "#") {alert('Vuelve a la página anterior');}
 var getLang = getParameterByName('lang');
